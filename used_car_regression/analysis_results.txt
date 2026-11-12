@@ -1,0 +1,30 @@
+Retail sales: 240 | train: 168 | test: 72 | auction lots: 40 | split seed: 42 | prep: $1,500
+
+Full model | training adjusted R²: 0.869054
+            Coefficient     p-value
+Intercept       21698.6 3.12807e-45
+Mileage_K      -78.5928  6.6275e-08
+Age_Years      -1300.64 5.53552e-11
+Horsepower      75.0158 1.24332e-34
+Accident       -2171.78 3.66516e-05
+Num_Owners      62.9248    0.865346
+
+Reduced model | training adjusted R²: 0.869835
+            Coefficient     p-value
+Intercept       21762.4 7.35315e-49
+Mileage_K      -78.1533 4.31637e-08
+Age_Years      -1291.63 1.15857e-11
+Horsepower      75.0204 7.78557e-35
+Accident       -2176.64 3.25314e-05
+
+v1 is the reduced model | features: Mileage_K, Age_Years, Horsepower, Accident
+Baseline retail prediction: $25,851.19
+Baseline | test R²: -0.013678 | test RMSE: $6,494.15
+v1 | test R²: 0.822679 | test RMSE: $2,716.14
+
+Auction backtest
+                   Baseline     v1
+Cars bought              14     17
+Money-losing buys        10      6
+Total profit ($)      -6000  15800
+Incremental profit (v1 minus baseline): $21,800
